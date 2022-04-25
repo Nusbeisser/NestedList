@@ -2,29 +2,23 @@ import ListItem from "./ListItem";
 import "./NestedList.scss";
 
 function UnorderedList({ data, section, type, name }) {
+  // const for inputs hierarchy
   const parentName = section;
+  //const for labels (input appearance) class checkbox/radio
+  const inputType =
+    type === "checkbox"
+      ? "checkbox-label"
+      : type === "radio"
+      ? "radio-label"
+      : null;
+
   if (data) {
     return (
       <>
-        {type === "checkbox" ? (
+        {type === "checkbox" || type === "radio" ? (
           <>
-            <input
-              type="checkbox"
-              name="list"
-              id={section}
-              className="checkbox"
-            />
-            <label htmlFor={section} className="checkbox-label">
-              <div className="teams">
-                {section}
-                {name}
-              </div>
-            </label>
-          </>
-        ) : type === "radio" ? (
-          <>
-            <input type="radio" name="main" id={section} className="radio" />
-            <label htmlFor={section} className="radio-label">
+            <input type={type} name="list" id={section} className={type} />
+            <label htmlFor={section} className={inputType}>
               <div className="teams">
                 {section}
                 {name}
