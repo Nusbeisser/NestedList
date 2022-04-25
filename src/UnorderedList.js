@@ -1,28 +1,21 @@
 import ListItem from "./ListItem";
 import "./NestedList.scss";
-import { useState } from "react";
 
 function UnorderedList({ data, section, type, name }) {
-  const [checked, setChecked] = useState("");
-
   // foo for handle closing checked radio
   const handleClick = (e) => {
-    setChecked(e.target.id);
     if (
       e.target.type === "radio" &&
-      (checked === e.target.id ||
-        e.target.parentNode.id ||
+      (e.target.parentNode.id === "ListContainer" ||
         e.target.parentNode.localName === "li")
     ) {
       e.target.checked = false;
-      setChecked("");
     }
   };
   // foo for check unchecked radio
   const handleChange = (e) => {
     if (e.target.type === "radio") {
       e.target.checked = true;
-      setChecked(e.target.id);
     }
   };
   // const for inputs hierarchy
