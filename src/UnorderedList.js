@@ -1,5 +1,5 @@
 import ListItem from "./ListItem";
-import "./NestedList.scss";
+import "./UnorderedList.scss";
 
 function UnorderedList({ data, section, type, name }) {
   // foo for handle closing checked radio
