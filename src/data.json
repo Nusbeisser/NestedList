@@ -85,13 +85,13 @@
             "type": "radio",
             "data": [
               {
-                "name": "PracownikX"
+                "name": "PracownikA"
               },
               {
-                "name": "PracownikY"
+                "name": "PracownikB"
               },
               {
-                "name": "PracownikZ"
+                "name": "PracownikC"
               }
             ]
           },{

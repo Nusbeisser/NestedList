@@ -14,7 +14,7 @@ function UnorderedList({ data, section, type, name }) {
               id={section}
               className="checkbox"
             />
-            <label for={section} className="checkbox-label">
+            <label htmlFor={section} className="checkbox-label">
               <div className="teams">
                 {section}
                 {name}
@@ -24,7 +24,7 @@ function UnorderedList({ data, section, type, name }) {
         ) : type === "radio" ? (
           <>
             <input type="radio" name="main" id={section} className="radio" />
-            <label for={section} className="radio-label">
+            <label htmlFor={section} className="radio-label">
               <div className="teams">
                 {section}
                 {name}
@@ -39,7 +39,7 @@ function UnorderedList({ data, section, type, name }) {
               data={data}
               type={type}
               name={name}
-              key={section}
+              key={section ? section : name}
               parentName={parentName}
             />
           ))}
