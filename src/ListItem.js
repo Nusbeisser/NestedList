@@ -1,6 +1,14 @@
 import UnorderedList from "./UnorderedList";
 
-function ListItem({ data, section, type, name, parentName }) {
+function ListItem({
+  data,
+  section,
+  type,
+  name,
+  parentName,
+  handleChange,
+  handleClick,
+}) {
   //const for labels (input appearance) class checkbox/radio
   const inputType =
     type === "checkbox"
@@ -31,7 +39,14 @@ function ListItem({ data, section, type, name, parentName }) {
   ) {
     return (
       <li>
-        <input type={type} name={parentName} id={section} className={type} />
+        <input
+          type={type}
+          name={parentName}
+          id={section}
+          className={type}
+          onClick={(e) => handleClick(e)}
+          onChange={(e) => handleChange(e)}
+        />
         <label htmlFor={section} className={inputType}>
           <div className="teams">
             {section}
