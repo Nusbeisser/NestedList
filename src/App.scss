@@ -1,0 +1,19 @@
+html {
+  font-size: 62,5%; //1rem = 10px
+}
+
+body {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+#ListContainer {
+  margin: 5px;
+}
+
+#ListContainer > label > .teams {
+  width: 8em;
+  display: inline-block;
+  word-wrap: break-word;
+}
