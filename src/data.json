@@ -23,7 +23,8 @@
             "data": [
               {
                 "section": "Podzespół 3.1",
-                "data": "Kalendarz"
+                "type":"checkbox",
+                "data": [{"name":"Kalendarz"},{"name":"Mapa"}]
               },
               {
                 "section": "Podzespół 3.2",

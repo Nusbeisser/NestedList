@@ -45,8 +45,19 @@ function ListItem({ data, section, type, name, parentName }) {
   }
 
   // for sections with empty object/array and radio/checkbox type input
-  if (Object.keys(data).length === 0 && type === "checkbox") {
-    return <li className="division">{section}</li>;
+  if (
+    Object.keys(data).length === 0 &&
+    (type === "checkbox" || type === "radio")
+  ) {
+    return (
+      <li>
+        <div className="teams empty">
+          {section}
+          <br />
+          {name}
+        </div>
+      </li>
+    );
   }
 }
 
