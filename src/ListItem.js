@@ -8,6 +8,8 @@ function ListItem({ data, section, type, name, parentName }) {
       : type === "radio"
       ? "radio-label"
       : null;
+
+  // for sections that don't have children
   if (
     typeof data != "object" ||
     (Object.keys(data).length === 0 && type === undefined)
@@ -22,6 +24,7 @@ function ListItem({ data, section, type, name, parentName }) {
     );
   }
 
+  // for sections with data and radio/checkbox type input
   if (type === "checkbox" || type === "radio") {
     return (
       <li>
@@ -35,13 +38,6 @@ function ListItem({ data, section, type, name, parentName }) {
         </label>
         <UnorderedList data={data} section={section} />
       </li>
-    );
-  } else if (type === undefined) {
-    return (
-      <>
-        <li>{section}</li>
-        {name}
-      </>
     );
   }
 }
