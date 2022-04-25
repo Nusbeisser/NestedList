@@ -124,6 +124,11 @@
             "name": "PracownikZ"
           }
         ]
+      },
+      {
+        "section": "Pusta tablica lub obiekt",
+        "type":"checkbox",
+        "data": []
       }
     ]
 
