@@ -1,9 +1,12 @@
 import UnorderedList from "./UnorderedList";
 
-function ListItem({ data, section, type, name }) {
-  console.log("listajtem");
-  console.log(data);
-
+function ListItem({ data, section, type, name, parentName }) {
+  const inputType =
+    type === "checkbox"
+      ? "checkbox-label"
+      : type === "radio"
+      ? "radio-label"
+      : null;
   if (
     typeof data != "object" ||
     (Object.keys(data).length === 0 && type === undefined)
@@ -18,34 +21,18 @@ function ListItem({ data, section, type, name }) {
     );
   }
 
-  if (type === "checkbox") {
+  if (type === "checkbox" || type === "radio") {
     return (
       <li>
-        <input type="checkbox" name="list" id={section} className="checkbox" />
-        <label for={section} className="checkbox-label">
-          <span class="checkbox-plus"></span>
-          <span class="checkbox-minus"></span>
+        <input type={type} name={parentName} id={section} className={type} />
+        <label for={section} className={inputType}>
           <div className="teams">
             {section}
             <br />
             {name}
           </div>
         </label>
-        <UnorderedList data={data} />
-      </li>
-    );
-  } else if (type === "radio") {
-    return (
-      <li>
-        <input type="radio" name="list" id={section} className="radio" />
-        <label for={section} className="radio-label">
-          <div className="teams">
-            {section}
-            <br />
-            {name}
-          </div>
-        </label>
-        <UnorderedList data={data} />
+        <UnorderedList data={data} section={section} />
       </li>
     );
   } else if (type === undefined) {

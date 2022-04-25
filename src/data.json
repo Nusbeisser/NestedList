@@ -81,8 +81,8 @@
         "section": "Pododdział 3",
         "type": "radio",
         "data": [      {
-            "section": "Niezrzeszeni1",
-            "type": "checkbox",
+            "section": "Pododdział 1 pododdziału 3 ;)",
+            "type": "radio",
             "data": [
               {
                 "name": "PracownikX"
@@ -92,6 +92,20 @@
               },
               {
                 "name": "PracownikZ"
+              }
+            ]
+          },{
+            "section": "Pododdział 2 pododdziału 3 ;)",
+            "type": "radio",
+            "data": [
+              {
+                "name": "Pracownik1"
+              },
+              {
+                "name": "Pracownik2"
+              },
+              {
+                "name": "Pracownik3"
               }
             ]
           }]
